@@ -1,0 +1,62 @@
+﻿@model Ipstset.Droids.GameResult
+
+@{
+    ViewBag.Title = "SimpleGame";
+}
+
+<h2>Robot or Lobot</h2>
+
+@{
+    if (Model.GameOver && !Model.PlayerWon)
+    {
+        <div><b>Game Over - You Lose!</b>
+        </div>
+    <a href="@Url.Content("~/robotorlobot/simplegame")">Play again?</a>
+    }
+    if (Model.GameOver && Model.PlayerWon)
+    {
+        <div><b>Game Over - You Win!</b>
+        </div>
+    <a href="@Url.Content("~/robotorlobot/simplegame")">Play again?</a>
+    }
+
+}
+
+
+<ul>
+@foreach (var card in Model.Cards)
+{
+    <li>
+        @{
+            if (card.IsFaceUp)
+            {
+                @card.Name
+            }
+            else
+            {
+                <a href="@Url.Content("~/robotorlobot/simplegame?cardId=" + card.Id)">Select card</a>
+            }
+}
+        
+
+    </li>
+}
+
+</ul>
+<div style="width: 200px;">
+    <h3>Player Info</h3>
+    <table class="table table-striped">
+        <tr>
+            <td>Wins</td>
+            <td>@Model.Player.Wins</td>
+        </tr>
+        <tr>
+            <td>Losses</td>
+            <td>@Model.Player.Losses</td>
+        </tr>
+        <tr>
+            <td>Most Wins in a Row</td>
+            <td>@Model.Player.LongestStreak</td>
+        </tr>
+    </table>
+</div>

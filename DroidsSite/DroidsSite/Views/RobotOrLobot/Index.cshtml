@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "Robot or Lobot";
+}
+
+@section HeadAdditions
+{
+    @*<link href="@Url.Content("~/Content/stars.css")" rel="stylesheet">*@
+}
+
+<div id="game">
+
+    <div id="scoreboard">
+
+        <div style="text-align: center">
+            Wins: {{ GameResult.Player.Wins }} / Losses: {{ GameResult.Player.Losses }} / Win Pct: {{ GameResult.Player.WinPct }}<br />Win Streak: {{ GameResult.Player.Streak }} / Best Streak: {{ GameResult.Player.LongestStreak }}
+        </div>
+    </div>
+
+
+    <div id="title">
+        <span>THESE AREN'T THE DROIDS</span><br/>
+        <span>YOU'RE LOOKING FOR</span>
+    </div>
+    <div id="instructions">
+        Play <strong>ROBOT or LOBOT</strong>. Find all the droids and win...pick Lobot and lose!
+    </div>
+
+    <div style="width: 100%;">
+        <div style="width: 90%; margin-left: auto; margin-right: auto;">
+            <div v-for="card in GameResult.Cards" style="width: 20%; float: left; ">
+                <img v-bind:src="ImageRootUrl + card.Image" class="img-responsive" v-on:click="selectCard(card.Id)" />
+            </div>
+        </div>
+    </div>
+
+    <br style="clear: both"/>
+
+    <div style="height: 90px;">
+        <div id="message">
+            {{ GameResult.GameMessage }}
+        </div>
+
+        <div v-if="GameResult.GameOver" style="text-align: center; height: 30px;">
+            <span v-if="GameResult.PlayerWon" class="game-won">
+                GAME OVER - You Win!
+            </span>
+            <span v-else class="game-lost">
+                GAME OVER - You Lose!
+            </span>
+            &nbsp;&nbsp;&nbsp;<a v-on:click="selectCard('x')" style="color: #f26417; text-decoration: none; cursor: pointer;">Play again?</a>
+        </div>        
+    </div>
+
+
+</div>
+
+        <div style="width: 728px; height: 90px; margin-left: auto; margin-right: auto;">
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <!-- Droids Main -->
+            <ins class="adsbygoogle"
+                 style="display: inline-block; width: 728px; height: 90px"
+                 data-ad-client="ca-pub-9192155997161302"
+                 data-ad-slot="9524625220"></ins>
+            <script>
+                (adsbygoogle = window.adsbygoogle || []).push({});
+            </script>
+        </div>
+
+<div id="contact">
+    <a href="mailto:ben@thesearentthedroids.com" style="text-decoration: none; color: #fff">&#64;</a>
+</div>
+<script type="text/javascript">
+	var images = [];
+	function preload() {
+		for (var i = 0; i < arguments.length; i++) {
+			images[i] = new Image();
+			images[i].src = preload.arguments[i];
+		}
+	}
+	
+
+	$( document ).ready(function() {
+		preload("http://www.thesearentthedroids.com/content/images/lobot.png",
+		"http://www.thesearentthedroids.com/content/images/r2-d2.png",
+		"http://www.thesearentthedroids.com/content/images/c-3po.png",
+		"http://www.thesearentthedroids.com/content/images/bb-8.png",
+		"http://www.thesearentthedroids.com/content/images/fx-7.png",
+		"http://www.thesearentthedroids.com/content/images/r5-d4.png",
+		"http://www.thesearentthedroids.com/content/images/mouse_droid.png",
+		"http://www.thesearentthedroids.com/content/images/gnk_droid.png",
+		"http://www.thesearentthedroids.com/content/images/2-1b.png",
+		"http://www.thesearentthedroids.com/content/images/8d8.png",
+		"http://www.thesearentthedroids.com/content/images/battle_droid.png",
+		"http://www.thesearentthedroids.com/content/images/super_battle_droid.png",
+		"http://www.thesearentthedroids.com/content/images/buzz_droid.png",
+		"http://www.thesearentthedroids.com/content/images/droideka.png",
+		"http://www.thesearentthedroids.com/content/images/fa-4_pilot_droid.png",
+		"http://www.thesearentthedroids.com/content/images/hurid-327.png",
+		"http://www.thesearentthedroids.com/content/images/ig-100_magnaguard.png",
+		"http://www.thesearentthedroids.com/content/images/gtaw-74_welder_droid.png",
+		"http://www.thesearentthedroids.com/content/images/ig-88.png",
+		"http://www.thesearentthedroids.com/content/images/imperial_probe_droid.png",
+		"http://www.thesearentthedroids.com/content/images/me-8d9.png",
+		"http://www.thesearentthedroids.com/content/images/pit_droid.png",
+		"http://www.thesearentthedroids.com/content/images/pz-4co.png",
+		"http://www.thesearentthedroids.com/content/images/rp-g0.png",
+		"http://www.thesearentthedroids.com/content/images/tc-14.png");
+	
+	});
+</script>
+
+<script src="@Url.Content("~/Scripts/vue.robotorlobot.js")"></script>
+<script type="text/javascript">
+    vm.init();
+</script>

@@ -1,0 +1,101 @@
+﻿html {
+	background: #1b2735;
+	height: 100%;
+
+		
+	background-image:url('http://insiteanalysis.com/wp-content/uploads/sites/4/2013/10/space-twitter-background-backgrounds-twitte-revolutions-free-plane-photo-space-backgrounds.jpg');
+background-repeat:no-repeat;
+-webkit-background-size:cover;
+-moz-background-size:cover;
+-o-background-size:cover;
+background-size:cover;
+background-position:center;
+}
+
+body {
+
+	font-family: Orbitron, Arial;
+
+}
+
+#scoreboard {
+	background-color: #4e2d6d;
+	font-family: Orbitron, Arial;
+	font-size: 16px;
+	color: #fff;
+	position: absolute;
+	bottom: 0px;
+	padding: 10px;
+}
+
+#contact {
+	background-color: #1b2735;
+	font-family: Orbitron, Arial;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	position: absolute;
+	bottom: 0;
+	right: 5px;
+	padding: 10px;
+}
+
+#message {
+	color: #fff;
+	font-family: Orbitron, Arial;
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 4px;
+}
+
+#title {
+  color: #cdb709;
+  text-align: center;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 10px;
+}
+#title span {
+  background: -webkit-linear-gradient(white, #38495a);
+  -webkit-background-clip: text;
+  /*-webkit-text-fill-color: transparent;*/
+}
+
+.img-responsive {
+	display: block;
+    max-width: 98%;
+    height: auto;
+}
+
+#instructions {
+	color: #fff;
+	font-family: Orbitron;
+	font-size: 24px;
+	text-align: center;
+	margin-bottom: 4px;
+	margin-top: 20px;
+}
+
+#instructions strong {
+	font-weight: 900;
+	font-size: 26px;
+}
+
+.game-lost {
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	background-color: #c80f0a;
+	padding: 2px 10px;
+}
+
+.game-won {
+	color: #ffffff;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	background-color: #1a3cbc;
+	padding: 2px 10px;
+}
